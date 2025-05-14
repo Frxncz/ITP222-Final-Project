@@ -63,7 +63,6 @@ if ($row = $result->fetch_assoc()) {
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="styles.css">
 </head>
 
 <style>
@@ -130,6 +129,69 @@ if ($row = $result->fetch_assoc()) {
     .nav-menu ul li a:hover {
       color: #007BFF;
     }
+
+    /* Login Form Styles */
+.login-container {
+  max-width: 500px;
+  margin: 120px auto 40px; /* leave space from the fixed header */
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#loginForm h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+#loginForm label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#loginForm button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #333333;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+#loginForm button:hover {
+  background-color: #555;
+}
+
+#loginForm a {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #007BFF;
+  font-size: 0.95rem;
+}
+
+#loginForm input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+    
     
   </style>
 
