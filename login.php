@@ -65,7 +65,90 @@ if ($row = $result->fetch_assoc()) {
   <title>Login</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
+<style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    /* Header Navigation */
+    .site-header {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .nav-menu ul {
+      list-style: none;
+      display: flex;
+    }
+    
+    .nav-menu ul li {
+      margin-left: 1.5rem;
+    }
+    
+    .nav-menu ul li a {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-menu ul li a:hover {
+      color: #007BFF;
+    }
+    
+  </style>
+
 <body>
+  <!-- Header with Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">Your Logo</div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
   <div class="login-container">
     <form action="login.php" method="POST" id="loginForm">
       <h2>Login</h2>

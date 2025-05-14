@@ -1,57 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sign Up</title>
-  <link rel="stylesheet" href="styles.css">
-    <style>
+  <style>
     .match-message {
       font-size: 0.9em;
       margin-top: 5px;
     }
+
     .match {
       color: green;
     }
+
     .no-match {
       color: red;
     }
-    </style>
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    form {
+      background: white;
+      max-width: 500px;
+      margin: 25px auto 20px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    ul#password-requirements {
+      font-size: 0.9em;
+      margin: 10px 0;
+      padding-left: 20px;
+      display: none; /* hidden by default */
+    }
+
+    ul#password-requirements li.invalid {
+      color: red;
+    }
+
+    ul#password-requirements li.valid {
+      color: green;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background: #333333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background: #555;
+    }
+
+    .nav-link {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .nav-link a {
+      color: #007bff;
+    }
+  </style>
 </head>
 <body>
   <form action="signup.php" method="POST" id="signupForm">
     <h2>Create Account</h2>
 
     <label for="username">Username*</label>
-    <input type="text" name="username" id="username" required placeholder="john_doe">
+    <input type="text" name="username" id="username" required placeholder="john_doe" />
 
     <label for="email">Email*</label>
-    <input type="email" name="email" id="email" required placeholder="john@example.com">
+    <input type="email" name="email" id="email" required placeholder="john@example.com" />
 
     <label for="password">Password*</label>
-    <input type="password" name="password" id="password" required placeholder="Min 8 chars, 1 special">
-    <input type="checkbox" onclick="togglePassword('password')"> Show Password
+    <input
+      type="password"
+      name="password"
+      id="password"
+      required
+      placeholder="Min 8 chars, 1 special"
+    />
+    <input type="checkbox" onclick="togglePassword('password')" /> Show Password
 
     <ul id="password-requirements">
-        <li id="length" class="invalid">At least 8 characters</li>
-        <li id="uppercase" class="invalid">At least one uppercase letter</li>
-        <li id="number" class="invalid">At least one number</li>
-        <li id="special" class="invalid">At least one special character (@#$%)</li>
-      </ul>
+      <li id="length" class="invalid">At least 8 characters</li>
+      <li id="uppercase" class="invalid">At least one uppercase letter</li>
+      <li id="number" class="invalid">At least one number</li>
+      <li id="special" class="invalid">At least one special character (@#$%)</li>
+    </ul>
 
     <label for="confirmPassword">Confirm Password</label>
-    <input type="password" id="confirmPassword" required>
-    <input type="checkbox" onclick="togglePassword('confirmPassword')"> Show Confirm Password
+    <input type="password" id="confirmPassword" required />
+    <input type="checkbox" onclick="togglePassword('confirmPassword')" /> Show Confirm Password
 
     <div id="passwordMatchMessage" class="match-message"></div>
 
-
-    <input type="checkbox" id="terms" required> <label for="terms">I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
+    <input type="checkbox" id="terms" required /> I agree to the Terms and Service
 
     <button type="submit">Sign Up</button>
-    <p class="nav-link">Already have an account? <a href="index.html">Log in</a></p>
-
+    <p class="nav-link">
+      <a href="login.php">Already have an account?</a>
+    </p>
   </form>
-  <script src="script.js"></script>
+
+  <script>
+    
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+    }
+
+    const passwordInput = document.getElementById("password");
+    const requirementsList = document.getElementById("password-requirements");
+
+    const lengthReq = document.getElementById("length");
+    const upperReq = document.getElementById("uppercase");
+    const numberReq = document.getElementById("number");
+    const specialReq = document.getElementById("special");
+
+    passwordInput.addEventListener("input", function () {
+      const value = passwordInput.value;
+      const show = value.length > 0;
+      requirementsList.style.display = show ? "block" : "none";
+
+      // Check length
+      lengthReq.classList.toggle("valid", value.length >= 8);
+      lengthReq.classList.toggle("invalid", value.length < 8);
+
+      // Check uppercase
+      const hasUpper = /[A-Z]/.test(value);
+      upperReq.classList.toggle("valid", hasUpper);
+      upperReq.classList.toggle("invalid", !hasUpper);
+
+      // Check number
+      const hasNumber = /\d/.test(value);
+      numberReq.classList.toggle("valid", hasNumber);
+      numberReq.classList.toggle("invalid", !hasNumber);
+
+      // Check special character
+      const hasSpecial = /[@#$%]/.test(value);
+      specialReq.classList.toggle("valid", hasSpecial);
+      specialReq.classList.toggle("invalid", !hasSpecial);
+
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+    const matchMessage = document.getElementById("passwordMatchMessage");
+
+    function checkPasswordMatch() {
+      const password = passwordInput.value;
+      const confirmPassword = confirmPasswordInput.value;
+
+      if (confirmPassword.length === 0) {
+        matchMessage.textContent = "";
+        matchMessage.className = "match-message";
+        return;
+      }
+
+      if (password === confirmPassword) {
+        matchMessage.textContent = "Passwords match";
+        matchMessage.className = "match-message match";
+      } else {
+        matchMessage.textContent = "Passwords do not match";
+        matchMessage.className = "match-message no-match";
+      }
+    }
+
+    passwordInput.addEventListener("input", checkPasswordMatch);
+    confirmPasswordInput.addEventListener("input", checkPasswordMatch);
+    });
+  </script>
 </body>
 </html>

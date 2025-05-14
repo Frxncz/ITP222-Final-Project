@@ -4,8 +4,73 @@
   <meta charset="UTF-8">
   <title>Welcome – Auth System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <!-- If you wish to keep an external stylesheet, you can still use it, but the CSS below is self-contained -->
   <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    /* Header Navigation */
+    .site-header {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .nav-menu ul {
+      list-style: none;
+      display: flex;
+    }
+    
+    .nav-menu ul li {
+      margin-left: 1.5rem;
+    }
+    
+    .nav-menu ul li a {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-menu ul li a:hover {
+      color: #007BFF;
+    }
+    
+    /* Landing Section */
     .landing-container {
       display: flex;
       flex-direction: column;
@@ -14,44 +79,63 @@
       height: 100vh;
       text-align: center;
       padding: 20px;
+      margin-top: 0px; /* To adjust for fixed header height */
     }
-
+    
     .landing-container h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin-bottom: 0.5em;
     }
-
+    
     .landing-container p {
       margin-bottom: 2em;
       color: #666;
+      font-size: 1.2em;
     }
-
+    
     .btn-group {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
     }
-
+    
     .btn-group a {
       padding: 12px 24px;
-      background: black;
-      color: white;
+      background: #333333;
+      color: #fff;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
       transition: background 0.2s ease;
     }
-
+    
     .btn-group a:hover {
-      background: #333;
+      background: #555;
     }
-
+    
+    /* Responsive Design for Small Screens */
     @media (max-width: 600px) {
+      .nav-menu ul {
+        flex-direction: column;
+        position: absolute;
+        background: #fff;
+        top: 60px;
+        right: 20px;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      
+      .nav-menu ul li {
+        margin: 10px 0;
+      }
+      
+      /* Optionally, if you plan to add a hamburger toggle, you can hide/show this menu */
+      
       .btn-group {
         flex-direction: column;
         width: 100%;
       }
-
+      
       .btn-group a {
         width: 100%;
         text-align: center;
@@ -60,6 +144,22 @@
   </style>
 </head>
 <body>
+  <!-- Header with Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">Your Logo</div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Landing Section -->
   <div class="landing-container">
     <h1>Welcome</h1>
     <p>Please choose an option to continue.</p>

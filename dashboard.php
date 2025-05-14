@@ -17,4 +17,3 @@ exit();
 <a href="logout.php">Log out</a>
 </body>
 </html>
-
