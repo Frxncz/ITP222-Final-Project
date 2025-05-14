@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <form action="login.php" method="POST" id="loginForm">
+      <h2>Login</h2>
+
+      <!-- Display Error Message if set in session -->
+      <?php
+      if (isset($_SESSION['error'])) {
+          echo '<p style="color:red;">' . $_SESSION['error'] . '</p>';
+          unset($_SESSION['error']);  // Unset the error message after displaying it
+      }
+      ?>
+      
+
+      <label for="email">Email or Username</label>
+      <input type="text" name="email" id="email" placeholder="Enter your email or username" required>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="Enter your password" required>
+      <input type="checkbox" onclick="togglePassword()"> Show Password
+
+      <a href="forgot_password.html">Forgot Password?</a>
+
+      <button type="submit">Login</button>
+      <a href="signup.html">Don't have an account? Sign up here</a>
+    </form>
+  </div>
+
+
+  <script>
+    // Toggle password visibility
+    function togglePassword() {
+      var passwordField = document.getElementById('password');
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+      } else {
+        passwordField.type = 'password';
+      }
+    }
+  </script>
+
+</body>
+</html>

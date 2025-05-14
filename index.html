@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome – Auth System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .landing-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .landing-container h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .landing-container p {
+      margin-bottom: 2em;
+      color: #666;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-group a {
+      padding: 12px 24px;
+      background: black;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .btn-group a:hover {
+      background: #333;
+    }
+
+    @media (max-width: 600px) {
+      .btn-group {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn-group a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="landing-container">
+    <h1>Welcome</h1>
+    <p>Please choose an option to continue.</p>
+    <div class="btn-group">
+      <a href="login.php">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+</body>
+</html>

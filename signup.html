@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="styles.css">
+    <style>
+    .match-message {
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+    .match {
+      color: green;
+    }
+    .no-match {
+      color: red;
+    }
+    </style>
+</head>
+<body>
+  <form action="signup.php" method="POST" id="signupForm">
+    <h2>Create Account</h2>
+
+    <label for="username">Username*</label>
+    <input type="text" name="username" id="username" required placeholder="john_doe">
+
+    <label for="email">Email*</label>
+    <input type="email" name="email" id="email" required placeholder="john@example.com">
+
+    <label for="password">Password*</label>
+    <input type="password" name="password" id="password" required placeholder="Min 8 chars, 1 special">
+    <input type="checkbox" onclick="togglePassword('password')"> Show Password
+
+    <ul id="password-requirements">
+        <li id="length" class="invalid">At least 8 characters</li>
+        <li id="uppercase" class="invalid">At least one uppercase letter</li>
+        <li id="number" class="invalid">At least one number</li>
+        <li id="special" class="invalid">At least one special character (@#$%)</li>
+      </ul>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" required>
+    <input type="checkbox" onclick="togglePassword('confirmPassword')"> Show Confirm Password
+
+    <div id="passwordMatchMessage" class="match-message"></div>
+
+
+    <input type="checkbox" id="terms" required> <label for="terms">I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
+
+    <button type="submit">Sign Up</button>
+    <p class="nav-link">Already have an account? <a href="index.html">Log in</a></p>
+
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
