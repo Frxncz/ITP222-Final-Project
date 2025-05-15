@@ -48,7 +48,7 @@ if (!isset($_SESSION['username'])) {
       font-weight: 700;
       font-size: 1.8rem;
       margin-bottom: 30px;
-      color: #ea5c5c;
+      color:rgb(11, 134, 196);
       letter-spacing: 2px;
       text-align: center;
     }
@@ -70,7 +70,7 @@ if (!isset($_SESSION['username'])) {
 
     nav a.active,
     nav a:hover {
-      background-color: #ea5c5c;
+      background-color: #006699;
       color: #fff;
     }
 
@@ -85,7 +85,7 @@ if (!isset($_SESSION['username'])) {
     }
 
     .logout-link:hover {
-      background-color: #ea5c5c;
+      background-color: #006699;
       color: #fff;
     }
 
@@ -98,18 +98,18 @@ if (!isset($_SESSION['username'])) {
 
     .hero {
       position: relative;
-      background: url('https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80') center center/cover no-repeat;
+      background: url('https://i.pinimg.com/736x/c3/86/98/c386984d08bf2186e93d06ad7e09984c.jpg') center center/cover no-repeat;
       height: 280px;
       border-radius: 16px;
       margin-bottom: 40px;
-      box-shadow: 0 10px 40px rgba(234, 92, 92, 0.5);
+      box-shadow: 0 10px 40px #006699;
     }
 
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(234, 92, 92, 0.6);
+      background:rgb(0, 77.20%, 63.90%, 0.60);
       border-radius: 16px;
     }
 
@@ -150,9 +150,10 @@ if (!isset($_SESSION['username'])) {
 
 <div class="layout">
   <aside class="sidebar" role="navigation" aria-label="Main Navigation">
-    <h2>Nomad Trails</h2>
+    <h2>COMPASS</h2>
     <nav>
       <a href="#hero" class="active">Home</a>
+      <a href="#travel-log">Trip Planner</a>
       <a href="#destinations">Destinations</a>
       <a href="#travel-log">Travel Log</a>
       <a href="#about">About</a>
@@ -207,11 +208,12 @@ if (!isset($_SESSION['username'])) {
       const dateObj = new Date(entry.date);
       const formattedDate = dateObj.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
 
-      entryEl.innerHTML = \`
-        <h4>\${entry.title}</h4>
-        <div class="meta">\${formattedDate} | \${entry.location}</div>
-        <p>\${entry.description}</p>
-      \`;
+        entryEl.innerHTML = `
+        <h4>${entry.title}</h4>
+        <div class="meta">${formattedDate} | ${entry.location}</div>
+        <p>${entry.description}</p>
+        `;
+
 
       logEntriesContainer.appendChild(entryEl);
     });

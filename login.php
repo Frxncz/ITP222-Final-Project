@@ -66,144 +66,194 @@ if ($row = $result->fetch_assoc()) {
 </head>
 
 <style>
-    /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
-    }
-    
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    
-    /* Header Navigation */
-    .site-header {
-      width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #333;
-    }
-    
-    .nav-menu ul {
-      list-style: none;
-      display: flex;
-    }
-    
-    .nav-menu ul li {
-      margin-left: 1.5rem;
-    }
-    
-    .nav-menu ul li a {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease;
-    }
-    
-    .nav-menu ul li a:hover {
-      color: #007BFF;
-    }
+  /* Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    /* Login Form Styles */
-.login-container {
-  max-width: 500px;
-  margin: 120px auto 40px; /* leave space from the fixed header */
-  background-color: #fff;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117; /* GitHub dark bg */
+    color: #c9d1d9; /* subtle light text */
+    line-height: 1.6;
+  }
 
-#loginForm h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
-}
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-#loginForm label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
+  /* Header Navigation */
+  .site-header {
+    width: 100%;
+    background: #161b22;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
 
-#loginForm input[type="text"],
-#loginForm input[type="password"] {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 1rem;
+  }
 
-#loginForm button {
-  width: 100%;
-  padding: 0.8rem;
-  background-color: #333333;
-  color: #fff;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-}
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #58a6ff; /* blue accent */
+    margin-right: auto;
+  }
 
-#loginForm button:hover {
-  background-color: #555;
-}
+  .nav-menu ul {
+    list-style: none;
+    display: flex;
+  }
 
-#loginForm a {
-  display: block;
-  text-align: center;
-  margin-top: 1rem;
-  color: #007BFF;
-  font-size: 0.95rem;
-}
+  .nav-menu ul li {
+    margin-left: 1.5rem;
+  }
 
-#loginForm input[type="checkbox"] {
-  margin-right: 5px;
-}
+  .nav-menu ul li a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #c9d1d9;
+  }
 
-    
-    
-  </style>
+  .nav-menu ul li a:hover {
+    background-color: #238636; /* green hover */
+    color: #ffffff;
+  }
+
+  /* Landing Section */
+  .landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0px;
+  }
+
+  .landing-container h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+    color: #58a6ff;
+  }
+
+  .landing-container p {
+    margin-bottom: 2em;
+    color: #8b949e;
+    font-size: 1.2em;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .btn-group a {
+    padding: 12px 24px;
+    background: #238636;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+  }
+
+  .btn-group a:hover {
+    background: #2ea043;
+  }
+
+  /* Login Form Styles */
+  .login-container {
+    max-width: 500px;
+    margin: 120px auto 40px;
+    background-color: #161b22;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  #loginForm h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    color: #58a6ff;
+  }
+
+  #loginForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #c9d1d9;
+  }
+
+  #loginForm input[type="text"],
+  #loginForm input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #30363d;
+    background-color: #0d1117;
+    color: #f0f6fc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  #loginForm button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #21262d;
+    color: #f0f6fc;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  #loginForm button:hover {
+    background-color: #30363d;
+  }
+
+  #loginForm a {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: #58a6ff;
+    font-size: 0.95rem;
+  }
+
+  #loginForm input[type="checkbox"] {
+    margin-right: 5px;
+  }
+</style>
+
 
 <body>
   <!-- Header with Navigation -->
   <header class="site-header">
     <div class="container">
-      <div class="logo">Your Logo</div>
+      <div class="logo">COMPASS</div>
       <nav class="nav-menu">
         <ul>
-          <li><a href="#about">About</a></li>
           <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#service">Service</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>

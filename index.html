@@ -11,64 +11,67 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
+      background-color: #0d1117;
+      color: #c9d1d9;
       line-height: 1.6;
     }
-    
+
     a {
       text-decoration: none;
       color: inherit;
     }
-    
+
     /* Header Navigation */
     .site-header {
       width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: #161b22;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       position: fixed;
       top: 0;
       left: 0;
       z-index: 100;
     }
-    
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
+      justify-content: flex-start;
+      padding: 1rem 1rem; /* smaller left padding */
     }
-    
+
     .logo {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #333;
+      color: #58a6ff; /* soft blue */
+      margin-right: auto;
     }
-    
+
     .nav-menu ul {
       list-style: none;
       display: flex;
     }
-    
+
     .nav-menu ul li {
       margin-left: 1.5rem;
     }
-    
+
     .nav-menu ul li a {
       font-size: 1rem;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    
+
     .nav-menu ul li a:hover {
-      color: #007BFF;
+      background-color: #238636; /* green */
+      color: #ffffff;
     }
-    
+
     /* Landing Section */
     .landing-container {
       display: flex;
@@ -78,63 +81,62 @@
       height: 100vh;
       text-align: center;
       padding: 20px;
-      margin-top: 0px; /* To adjust for fixed header height */
+      margin-top: 0px;
     }
-    
+
     .landing-container h1 {
       font-size: 2.8em;
       margin-bottom: 0.5em;
+      color: #58a6ff;
     }
-    
+
     .landing-container p {
       margin-bottom: 2em;
-      color: #666;
+      color: #c9d1d9;
       font-size: 1.2em;
     }
-    
+
     .btn-group {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
     }
-    
+
     .btn-group a {
       padding: 12px 24px;
-      background: #333333;
+      background: #238636;
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
       transition: background 0.2s ease;
     }
-    
+
     .btn-group a:hover {
-      background: #555;
+      background: #2ea043;
     }
-    
+
     /* Responsive Design for Small Screens */
     @media (max-width: 600px) {
       .nav-menu ul {
         flex-direction: column;
         position: absolute;
-        background: #fff;
+        background: #161b22;
         top: 60px;
         right: 20px;
         padding: 1rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
       }
-      
+
       .nav-menu ul li {
         margin: 10px 0;
       }
-      
-      /* Optionally, if you plan to add a hamburger toggle, you can hide/show this menu */
-      
+
       .btn-group {
         flex-direction: column;
         width: 100%;
       }
-      
+
       .btn-group a {
         width: 100%;
         text-align: center;
@@ -146,18 +148,18 @@
   <!-- Header with Navigation -->
   <header class="site-header">
     <div class="container">
-      <div class="logo">Your Logo</div>
+      <div class="logo">COMPASS</div>
       <nav class="nav-menu">
         <ul>
-          <li><a href="#about">About</a></li>
           <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#service">Service</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  
+
   <!-- Main Landing Section -->
   <div class="landing-container">
     <h1>Welcome</h1>
