@@ -108,7 +108,7 @@ if ($row = $result->fetch_assoc()) {
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #58a6ff; /* blue accent */
+    color: #ffcc66;
     margin-right: auto;
   }
 
@@ -130,7 +130,7 @@ if ($row = $result->fetch_assoc()) {
   }
 
   .nav-menu ul li a:hover {
-    background-color: #238636; /* green hover */
+    background-color: #993300;
     color: #ffffff;
   }
 
@@ -192,7 +192,7 @@ if ($row = $result->fetch_assoc()) {
     text-align: center;
     margin-bottom: 1.5rem;
     font-size: 1.75rem;
-    color: #58a6ff;
+    color: #ffcc66;
   }
 
   #loginForm label {
@@ -217,7 +217,7 @@ if ($row = $result->fetch_assoc()) {
   #loginForm button {
     width: 100%;
     padding: 0.8rem;
-    background-color: #21262d;
+    background-color: #993300;
     color: #f0f6fc;
     font-size: 1rem;
     border: none;
@@ -235,7 +235,7 @@ if ($row = $result->fetch_assoc()) {
     display: block;
     text-align: center;
     margin-top: 1rem;
-    color: #58a6ff;
+    color: #ffcc66;
     font-size: 0.95rem;
   }
 
