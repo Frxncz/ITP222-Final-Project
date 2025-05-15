@@ -75,32 +75,151 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['reset_user_id'])) 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Reset Password</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset and global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    a {
+      color: #ffcc66;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #993300;
+    }
+    .login-container {
+      background-color: #161b22;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 420px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    h2 {
+      color: #ffcc66;
+      margin-bottom: 25px;
+      text-align: center;
+      letter-spacing: 1.5px;
+    }
+    label {
+      margin-top: 15px;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #c9d1d9;
+    }
+    input[type="password"] {
+      padding: 12px 15px;
+      border-radius: 6px;
+      border: 1.5px solid #30363d;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #ffcc66;
+      background-color: #161b22;
+    }
+    input[type="checkbox"] {
+      cursor: pointer;
+      accent-color: #ffcc66;
+      margin-right: 8px;
+      /* remove vertical margins to help align with label */
+      vertical-align: middle;
+    }
+    .password-field {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      user-select: none;
+    }
+    button {
+      margin-top: 25px;
+      padding: 12px 15px;
+      background-color: #993300;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ffcc66;
+      color: #000;
+    }
+    p {
+      margin-top: 20px;
+      text-align: center;
+      color: #c9d1d9;
+    }
+    p a {
+      font-weight: 600;
+    }
+    /* Error message */
+    p.error-message {
+      color: #ff4d4d;
+      background-color: #3b1a1a;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <div class="login-container">
     <form action="reset_password.php?token=<?php echo htmlspecialchars($_GET['token'] ?? ''); ?>" method="POST">
       <h2>Reset Your Password</h2>
-      
+
       <?php if (isset($_SESSION['error'])): ?>
-        <p style="color:red;"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+        <p class="error-message"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
       <?php endif; ?>
-      
+
       <label for="password">New Password</label>
       <input type="password" name="password" id="password" required placeholder="Min 8 chars, 1 uppercase, 1 number, 1 special">
-      <input type="checkbox" onclick="togglePassword('password')"> Show Password
-      
+
+      <div class="password-field">
+        <input type="checkbox" id="show_password" onclick="togglePassword('password')">
+        <label for="show_password">Show Password</label>
+      </div>
+
       <label for="confirm_password">Confirm New Password</label>
       <input type="password" name="confirm_password" id="confirm_password" required>
-      <input type="checkbox" onclick="togglePassword('confirm_password')"> Show Password
-      
+
+      <div class="password-field">
+        <input type="checkbox" id="show_confirm_password" onclick="togglePassword('confirm_password')">
+        <label for="show_confirm_password">Show Password</label>
+      </div>
+
       <button type="submit">Update Password</button>
       <p><a href="login.php">Back to Login</a></p>
     </form>
   </div>
-  
+
   <script>
     function togglePassword(fieldId) {
       const field = document.getElementById(fieldId);
