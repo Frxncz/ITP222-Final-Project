@@ -122,6 +122,8 @@
 
 </head>
 <body>
+
+  
   <form action="signup.php" method="POST" id="signupForm">
     <h2>Create Account</h2>
 
@@ -154,7 +156,8 @@
 
     <div id="passwordMatchMessage" class="match-message"></div>
 
-    <input type="checkbox" id="terms" required /> I agree to the Terms and Service
+    <input type="checkbox" id="terms" required />
+I agree to the <a href="#" onclick="openTerms(event)" style="color:#ffcc66;">Terms and Service</a>
 
     <button type="submit">Sign Up</button>
     <p class="nav-link">
@@ -163,6 +166,20 @@
   </form>
 
   <script>
+
+    function openTerms(event) {
+    event.preventDefault(); // Prevent the default anchor behavior
+
+    const termsWindow = window.open(
+      'terms.html',
+      'TermsWindow',
+      'width=500,height=400,resizable=yes,scrollbars=yes'
+    );
+
+    if (!termsWindow || termsWindow.closed || typeof termsWindow.closed == 'undefined') {
+      alert('Please allow pop-ups for this website to view the Terms and Service.');
+    }
+  }
     
     function togglePassword(id) {
       const input = document.getElementById(id);

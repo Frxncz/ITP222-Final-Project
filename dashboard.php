@@ -165,7 +165,7 @@ if (!isset($_SESSION['username'])) {
   <main class="content" role="main">
     <section class="hero" id="hero" aria-label="Hero section with travel theme">
       <div class="hero-text" tabindex="0">
-        <h1>Discover. Dream. Travel.</h1>
+        <h1>Wander often, wonder always.</h1>
         <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
       </div>
     </section>
