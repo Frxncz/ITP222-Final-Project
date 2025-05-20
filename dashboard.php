@@ -214,7 +214,7 @@ if (!isset($_SESSION['username'])) {
     <nav>
       <a href="#hero" class="active">Home</a>
       <a href="trip-planner.php">Trip Planner</a>
-      <a href="#destinations">Destinations</a>
+      <a href="destination.php">Destinations</a>
       <a href="#travel-log">Travel Log</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>

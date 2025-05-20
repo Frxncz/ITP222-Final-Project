@@ -162,7 +162,7 @@ if (!isset($_SESSION['username'])) {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: #bb4a12;
+    background: #1e2a38;
     padding: 10px;
     border-radius: 6px;
     cursor: pointer;
@@ -209,7 +209,7 @@ if (!isset($_SESSION['username'])) {
     <nav>
       <a href="dashboard.php">Home</a>
       <a href="trip-planner.php" class="active">Trip Planner</a>
-      <a href="#destinations">Destinations</a>
+      <a href="destination.php">Destinations</a>
       <a href="#travel-log">Travel Log</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
