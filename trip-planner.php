@@ -234,7 +234,7 @@ $conn->close();
       <a href="dashboard.php">Home</a>
       <a href="trip-planner.php" class="active">Trip Planner</a>
       <a href="destination.php">Destinations</a>
-      <a href="#travel-log">Travel Log</a>
+      <a href="travel-log.php">Travel Log</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>

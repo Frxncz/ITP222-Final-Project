@@ -212,10 +212,10 @@ if (!isset($_SESSION['username'])) {
   <aside class="sidebar" role="navigation" aria-label="Main Navigation">
     <h2>COMPASS</h2>
     <nav>
-      <a href="#hero" class="active">Home</a>
+      <a href="dashboard.php" class="active">Home</a>
       <a href="trip-planner.php">Trip Planner</a>
       <a href="destination.php">Destinations</a>
-      <a href="#travel-log">Travel Log</a>
+      <a href="travel-log.php">Travel Log</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -250,16 +250,16 @@ if (!isset($_SESSION['username'])) {
       <h3>Learn More About</h3>
       <div class="learn-more-cards">
         <div class="learn-card">
-          <h4>Budget Backpacking in Europe</h4>
+          <h4>Fly Fishing in the Rocky Mountains</h4>
           <p>Discover how to stretch your budget and explore the best of Europe without breaking the bank.</p>
         </div>
         <div class="learn-card">
-          <h4>Must-Have Travel Gear</h4>
-          <p>Find out the essential gear every traveler should carry, from water filters to versatile shoes.</p>
+          <h4>Level 5 Rapids! </h4>
+          <p>Put your helmet on and grab your wetsuit. It's time to conquer Siberia.</p>
         </div>
         <div class="learn-card">
-          <h4>Travel Safety Tips</h4>
-          <p>Stay safe on your adventures with our top travel safety advice for solo and group travelers alike.</p>
+          <h4>Puget Sound Kayaking </h4>
+          <p>One week of ocean kayaking in the Puget Sound.</p>
         </div>
       </div>
     </section>
