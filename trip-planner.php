@@ -4,7 +4,31 @@ if (!isset($_SESSION['username'])) {
   header("Location: index.html");
   exit();
 }
+
+$username = $_SESSION['username'];
+
+// DB connection
+$conn = new mysqli("localhost", "root", "", "auth_system");
+
+$city = $region = '';
+$activities = $info = [];
+
+if ($conn->connect_error === false) {
+  $stmt = $conn->prepare("SELECT city, region, activities, info FROM trip_plans WHERE username = ?");
+  $stmt->bind_param("s", $username);
+  $stmt->execute();
+  $stmt->bind_result($city, $region, $activitiesStr, $infoStr);
+
+  if ($stmt->fetch()) {
+    $activities = explode(", ", $activitiesStr);
+    $info = explode(", ", $infoStr);
+  }
+
+  $stmt->close();
+}
+$conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
