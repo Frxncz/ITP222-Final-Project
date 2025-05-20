@@ -213,7 +213,7 @@ if (!isset($_SESSION['username'])) {
     <h2>COMPASS</h2>
     <nav>
       <a href="#hero" class="active">Home</a>
-      <a href="#travel-log">Trip Planner</a>
+      <a href="trip-planner.php">Trip Planner</a>
       <a href="#destinations">Destinations</a>
       <a href="#travel-log">Travel Log</a>
       <a href="#about">About</a>
