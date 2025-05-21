@@ -258,8 +258,11 @@ if (!isset($_SESSION['username'])) {
         <p>Be ready to go on a moment's notice. We will call you when the surf is pumping and fly you out for five mornings of hurricane-inspired summertime swells.</p>
         <p class="adventure-details">$960 including lodging, food, and airfare</p>
       </div>
+      
       <div class="adventure-image">
+         <a href=detail-surfing.php>
         <img src="https://lapoint.b-cdn.net/image/4qxBb6Nw4NARuV8AUDXZn6/1c594f817ac1aa69e81d8c07bfa90c0e/massive_waves.jpg?fm=jpg&fl=progressive&w=1920&q=75" alt="Surfer">
+        </a>
       </div>
     </section>
 
@@ -269,9 +272,11 @@ if (!isset($_SESSION['username'])) {
         <p>Get ready for thrilling trails and scenic routes designed for biking enthusiasts. Our mountain biking package takes you through breathtaking terrain and unforgettable views.</p>
         <p class="adventure-details">$870 including guide, meals, and transport</p>
       </div>
-      <div class="adventure-image">
-        <img src="https://cdn.whistler.com/s3/images/og/whistler-recreational-biking.jpg" alt="Mountain Biker">
-      </div>
+          <div class="adventure-image">
+            <a href="#detail-biker">
+            <img src="https://cdn.whistler.com/s3/images/og/whistler-recreational-biking.jpg" alt="Mountain Biker">
+            </a>
+          </div>
     </section>
 
     <section class="adventure-section" id="travel-log">
@@ -280,9 +285,12 @@ if (!isset($_SESSION['username'])) {
         <p>Challenge yourself with our rock climbing adventures. Whether you're a beginner or seasoned climber, we've got the cliffs and gear ready for an adrenaline-packed journey.</p>
         <p class="adventure-details">$920 including gear rental, safety training, and meals</p>
       </div>
-      <div class="adventure-image">
-        <img src="https://assets.canarymedia.com/content/uploads/Alex-honnold-lead-resized.jpg" alt="Climber">
-      </div>
+        <a href="#detail-climber">
+          <div class="adventure-image">
+            <a href="#detail-climber">
+            <img src="https://assets.canarymedia.com/content/uploads/Alex-honnold-lead-resized.jpg" alt="Climber">
+            </a>
+          </div>
     </section>
   </main>
 </div>

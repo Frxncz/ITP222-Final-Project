@@ -12,7 +12,6 @@ if (!isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nomad Trails - Travel Website with Log</title>
   <style>
-    /* Reset and basics */
     * {
       margin: 0;
       padding: 0;
@@ -32,14 +31,12 @@ if (!isset($_SESSION['username'])) {
       text-decoration: none;
     }
 
-    /* Layout */
     .layout {
       display: flex;
       height: 100vh;
       overflow: hidden;
     }
 
-    /* Sidebar */
     .sidebar {
       width: 260px;
       background: #121821;
@@ -91,14 +88,12 @@ if (!isset($_SESSION['username'])) {
       background-color: #993300;
     }
 
-    /* Main content */
     .content {
       flex-grow: 1;
       padding: 40px;
       overflow-y: auto;
     }
 
-    /* Images row */
     .images-row {
       display: flex;
       justify-content: space-between;
@@ -121,14 +116,12 @@ if (!isset($_SESSION['username'])) {
       transform: scale(1.05);
     }
 
-    /* Info section */
     .info-section {
       color: #fdf6e3;
       font-size: 1.15rem;
       line-height: 1.8;
     }
 
-    /* Each adventure container */
     .adventure-container {
       background-color: #1a1f2b;
       padding: 25px 30px;
@@ -145,7 +138,6 @@ if (!isset($_SESSION['username'])) {
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .layout {
         flex-direction: column;
@@ -172,6 +164,20 @@ if (!isset($_SESSION['username'])) {
         max-height: none;
       }
     }
+
+    .images-row a {
+  flex: 1;
+}
+
+.images-row a img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info-section h3 {
+  color: #ffcc66;
+}
   </style>
 </head>
 <body>
@@ -193,24 +199,35 @@ if (!isset($_SESSION['username'])) {
   <main class="content">
 
     <div class="images-row">
-      <img src="https://lapoint.b-cdn.net/image/4qxBb6Nw4NARuV8AUDXZn6/1c594f817ac1aa69e81d8c07bfa90c0e/massive_waves.jpg?fm=jpg&fl=progressive&w=1920&q=75" alt="Surfer" />
-      <img src="https://cdn.whistler.com/s3/images/og/whistler-recreational-biking.jpg" alt="Scaling mountains in Manurai" />
-      <img src="https://assets.canarymedia.com/content/uploads/Alex-honnold-lead-resized.jpg" alt="Cycling the Irma coastline" />
+      <a href="#">
+        <img src="https://lapoint.b-cdn.net/image/4qxBb6Nw4NARuV8AUDXZn6/1c594f817ac1aa69e81d8c07bfa90c0e/massive_waves.jpg?fm=jpg&fl=progressive&w=1920&q=75" alt="Surfer" />
+      </a>
+
+      <a href="#">
+        <img src="https://cdn.whistler.com/s3/images/og/whistler-recreational-biking.jpg" alt="Scaling mountains in Manurai" />
+      </a>
+
+      <a href="#">
+        <img src="https://assets.canarymedia.com/content/uploads/Alex-honnold-lead-resized.jpg" alt="Cycling the Irma coastline" />
+      </a>
     </div>
 
     <div class="info-section">
       <h3>Featured Adventures</h3>
 
       <div class="adventure-container">
-        <p><strong>Conquering the rapids of the Rutan Islands:</strong> Definitely our craziest journey ever! A beautiful collage of nature. Rapids reaching nearly 50 mph, more than a dozen waterfalls of various sizes, and some killer rocks gave us the biggest rush. Nothing beats the feeling of complete loss of control! The Rutan Islands also has a lighter, more relaxing side – check out the local villages.</p>
+        <h3>Conquering the rapids of the Rutan Islands:</h3>
+        <p>Definitely our craziest journey ever! A beautiful collage of nature. Rapids reaching nearly 50 mph, more than a dozen waterfalls of various sizes, and some killer rocks gave us the biggest rush. Nothing beats the feeling of complete loss of control! The Rutan Islands also has a lighter, more relaxing side – check out the local villages.</p>
       </div>
 
       <div class="adventure-container">
-        <p><strong>Scaling mountains in Manurai:</strong> Some of the steepest cliffs around! My buddy and I began our 3-day scale above the majestic raging waters of Nanna.</p>
+        <h3>Scaling mountains in Manurai:</h3>
+        <p>Some of the steepest cliffs around! My buddy and I began our 3-day scale above the majestic raging waters of Nanna.</p>
       </div>
 
       <div class="adventure-container">
-        <p><strong>Cycling the Irma coastline:</strong> Beautiful scenery combined with steep inclines and fast roads allowed for some great cycling. Don't forget the helmet!!</p>
+        <h3>Cycling the Irma coastline:</h3>
+        <p>Beautiful scenery combined with steep inclines and fast roads allowed for some great cycling. Don't forget the helmet!!</p>
       </div>
     </div>
 

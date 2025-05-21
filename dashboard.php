@@ -233,15 +233,15 @@ if (!isset($_SESSION['username'])) {
    <div class="grid-section">
   <div class="featured-box">
     <h3>Featured Destination</h3>
-    <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/05/Hogwarts-Castle-in-Harry-Potter.jpg" alt="Featured Destination">
-    <h4 style="margin-top: 15px; margin-bottom: 15px; color: #fff; font-size: 20px;">Lorem ipsum, dolor sit amet</h4>
-    <p style="font-size: 0.95rem; color: #fff;">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <img src="https://i.pinimg.com/736x/42/1b/bd/421bbdfc87fa55c0921f2c9c5c19fe90.jpg" alt="Featured Destination">
+    <h4 style="margin-top: 15px; margin-bottom: 15px; color: #fff; font-size: 20px;">Hogwarts School of Witchcraft and Wizardry.</h4>
+    <p style="font-size: 0.95rem; color: #fff;">Hogwarts School of Witchcraft and Wizardry is a magical boarding school in Scotland where young witches and wizards are trained in the magical arts. It is divided into four houses: Gryffindor, Hufflepuff, Ravenclaw, and Slytherin, each with its own unique values and traditions.</p>
   </div>
 
   <div class="highlight-box">
     <h3>Highlights</h3>
-    <img src="https://media.timeout.com/images/105658195/750/422/image.jpg" alt="Highlights Image" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
-    <p style="font-size: 0.95rem; color: #fff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <img src="https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23110040/3532507.jpeg?quality=90&strip=all&crop=12.359198998748,0,75.281602002503,100" alt="Highlights Image" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+    <p style="font-size: 0.95rem; color: #fff;">Quidditch is a high-speed, magical sport played on broomsticks in the Harry Potter series. It involves four balls, seven players per team, and a mix of scoring goals and catching the Golden Snitch.</p>
   </div>
 </div>
 
