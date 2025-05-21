@@ -255,6 +255,73 @@ form input[type="submit"]:hover {
   background: #d94a0b;
 }
 
+/* Submitted Trips Container */
+.submitted-trips {
+  max-width: 800px;
+  margin: 40px auto 80px auto;
+  padding: 0 20px;
+}
+
+/* No trips message */
+.no-trips-message {
+  background: #1e2a38;
+  padding: 20px;
+  border-radius: 10px;
+  color: #ffcc66;
+  font-size: 1.3rem;
+  text-align: center;
+  /* box-shadow removed */
+  margin-top: 20px;
+}
+
+/* Trip items container */
+.trip-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Trip item */
+.trip-item {
+  background: #1e2a38;
+  padding: 20px 25px;
+  border-radius: 10px;
+  /* box-shadow removed */
+  color: #fff;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* Strong text */
+.trip-item strong {
+  color: #ffcc66;
+}
+
+/* Cancel button */
+.trip-item form {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.trip-item input[type="submit"] {
+  background: #bb4a12;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.trip-item input[type="submit"]:hover {
+  background: #d94a0b;
+}
+
+
+
+
   </style>
 </head>
 <body>
@@ -267,8 +334,7 @@ form input[type="submit"]:hover {
       <a href="trip-planner.php" class="active">Trip Planner</a>
       <a href="destination.php">Destinations</a>
       <a href="travel-log.php">Travel Log</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="about.php">About</a>
     </nav>
     <a href="logout.php" class="logout-link">Logout</a>
   </aside>
@@ -312,7 +378,24 @@ form input[type="submit"]:hover {
       <input type="submit" value="Submit Plan">
     </form>
 
-    <h2 style="margin-top: 60px;">Your Submitted Trip Plans</h2>
+<h2 style="
+  margin-top: 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.4rem;
+  color: #ffcc66;
+  text-align: center;
+  letter-spacing: 1.5px;
+  border-bottom: 3px solid #ffcc66;
+  padding-bottom: 10px;
+  /* max-width: 400px;  <-- remove this */
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap; /* optional: prevents wrapping */
+">
+  Your Submitted Trip Plans
+</h2>
+
+
 
     <?php
     // Connect to DB and fetch trips for the user
@@ -325,27 +408,29 @@ form input[type="submit"]:hover {
         $stmt->execute();
         $result = $stmt->get_result();
 
-        if ($result->num_rows > 0) {
-            echo '<div>';
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="trip-item">';
-                echo '<strong>City:</strong> ' . htmlspecialchars($row['city']) . '<br>';
-                echo '<strong>Region:</strong> ' . htmlspecialchars($row['region']) . '<br>';
-                echo '<strong>Activities:</strong> ' . htmlspecialchars($row['activities']) . '<br>';
-                echo '<strong>Info Requested:</strong> ' . htmlspecialchars($row['info']) . '<br>';
+        echo '<div class="submitted-trips">';
+if ($result->num_rows > 0) {
+    echo '<div class="trip-items-list">';
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="trip-item">';
+        echo '<strong>City:</strong> ' . htmlspecialchars($row['city']) . '<br>';
+        echo '<strong>Region:</strong> ' . htmlspecialchars($row['region']) . '<br>';
+        echo '<strong>Activities:</strong> ' . htmlspecialchars($row['activities']) . '<br>';
+        echo '<strong>Info Requested:</strong> ' . htmlspecialchars($row['info']) . '<br>';
 
-                // Cancel form
-                echo '<form method="POST" action="delete-trip.php" onsubmit="return confirm(\'Are you sure you want to cancel this trip plan?\');">';
-                echo '<input type="hidden" name="trip_id" value="' . intval($row['id']) . '">';
-                echo '<input type="submit" value="Cancel Trip">';
-                echo '</form>';
+        // Cancel form
+        echo '<form method="POST" action="delete-trip.php" onsubmit="return confirm(\'Are you sure you want to cancel this trip plan?\');">';
+        echo '<input type="hidden" name="trip_id" value="' . intval($row['id']) . '">';
+        echo '<input type="submit" value="Cancel Trip">';
+        echo '</form>';
 
-                echo '</div>';
-            }
-            echo '</div>';
-        } else {
-            echo '<p>You haven\'t submitted any trip plans yet.</p>';
-        }
+        echo '</div>';
+    }
+    echo '</div>';
+} else {
+    echo '<p class="no-trips-message">You haven\'t submitted any trip plans yet.</p>';
+}
+echo '</div>';
 
         $stmt->close();
         $conn->close();

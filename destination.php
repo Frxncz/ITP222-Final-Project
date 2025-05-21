@@ -240,8 +240,7 @@ if (!isset($_SESSION['username'])) {
       <a href="trip-planner.php">Trip Planner</a>
       <a href="destination.php" class="active">Destinations</a>
       <a href="travel-log.php">Travel Log</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="about.php">About</a>
     </nav>
     <a href="logout.php" class="logout-link">Logout</a>
   </aside>
