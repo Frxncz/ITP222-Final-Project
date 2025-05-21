@@ -205,55 +205,54 @@
   </style>
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <h2>COMPASS</h2>
-      <nav>
-        <a href="dashboard.php">Home</a>
-        <a href="trip-planner.php">Trip Planner</a>
-        <a href="destination.php" class="active">Destinations</a>
-        <a href="travel-log.php">Travel Log</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a href="logout.php" class="logout-link">Logout</a>
-    </aside>
+    <div class="layout">
+        <aside class="sidebar">
+        <h2>COMPASS</h2>
+        <nav>
+            <a href="dashboard.php">Home</a>
+            <a href="trip-planner.php">Trip Planner</a>
+            <a href="destination.php" class="active">Destinations</a>
+            <a href="travel-log.php">Travel Log</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="logout.php" class="logout-link">Logout</a>
+        </aside>
 
-    <main class="content">
-      <!-- Package Includes Section -->
-<!-- Package Includes Section -->
-<div class="info-box">
-  <h3>Package Includes:</h3>
-  <div class="package-line">
-    <div class="package-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-      </svg>
-      Airfare
-    </div>
-    <div class="separator"></div>
-    <div class="package-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M4 6h16v2H4zm0 6h16v2H4zm0 6h16v2H4z" />
-      </svg>
-      Food
-    </div>
-    <div class="separator"></div>
-    <div class="package-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M4 10v10h16V10l-8-6z" />
-      </svg>
-      Lodging
-    </div>
-    <div class="separator"></div>
-    <div class="package-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-      </svg>
-      Local guide
-    </div>
-  </div>
-</div>
+        <main class="content">
+        <!-- Package Includes Section -->
+        <div class="info-box">
+        <h3>Package Includes:</h3>
+        <div class="package-line">
+            <div class="package-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+            </svg>
+            Airfare
+            </div>
+            <div class="separator"></div>
+            <div class="package-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M4 6h16v2H4zm0 6h16v2H4zm0 6h16v2H4z" />
+            </svg>
+            Food
+            </div>
+            <div class="separator"></div>
+            <div class="package-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M4 10v10h16V10l-8-6z" />
+            </svg>
+            Lodging
+            </div>
+            <div class="separator"></div>
+            <div class="package-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+            </svg>
+            Local guide
+            </div>
+        </div>
+        </div>
 
 
       <!-- Other Things To Do Section -->
@@ -276,6 +275,19 @@
           <p>You'll stay at the centrally located Newport Bonita in Newport Beach. From there you can strike out to Trestles, Malibu, Salt Creek, The Wedge, San Onofre, and a dozen secret spots. Or, you can just walk out to the local beach breaks.</p>
         </div>
       </div>
+
+            <a href="destination.php" style="
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #993300;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        transition: background-color 0.3s ease;
+        ">Back</a>
+
     </main>
   </div>
 </body>
