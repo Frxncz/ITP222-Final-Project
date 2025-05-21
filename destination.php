@@ -273,7 +273,7 @@ if (!isset($_SESSION['username'])) {
         <p class="adventure-details">$870 including guide, meals, and transport</p>
       </div>
           <div class="adventure-image">
-            <a href="#detail-biker">
+            <a href=detail-biking.php>
             <img src="https://cdn.whistler.com/s3/images/og/whistler-recreational-biking.jpg" alt="Mountain Biker">
             </a>
           </div>
@@ -287,7 +287,7 @@ if (!isset($_SESSION['username'])) {
       </div>
         <a href="#detail-climber">
           <div class="adventure-image">
-            <a href="#detail-climber">
+            <a href=detail-climbing.php>
             <img src="https://assets.canarymedia.com/content/uploads/Alex-honnold-lead-resized.jpg" alt="Climber">
             </a>
           </div>

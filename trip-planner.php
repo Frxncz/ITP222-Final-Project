@@ -359,6 +359,7 @@ form input[type="submit"]:hover {
 <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
 <script>
   am5.ready(function() {
     var root = am5.Root.new("chartdiv");
@@ -383,12 +384,12 @@ form input[type="submit"]:hover {
       tooltipText: "{name}",
       interactive: true,
       cursorOverStyle: "pointer",
-      fill: am5.color(0x003366),
-      stroke: am5.color(0x999999)
+      fill: am5.color(0x993300),
+      stroke: am5.color(0x662200)
     });
 
     polygonSeries.mapPolygons.template.states.create("hover", {
-      fill: am5.color(0x993300)
+      fill: am5.color(0xffd27f )
     });
 
     polygonSeries.mapPolygons.template.events.on("click", function(ev) {

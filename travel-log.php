@@ -199,15 +199,15 @@ if (!isset($_SESSION['username'])) {
   <main class="content">
 
     <div class="images-row">
-      <a href="#">
+      <a href=detail-surfing.php>
         <img src="https://lapoint.b-cdn.net/image/4qxBb6Nw4NARuV8AUDXZn6/1c594f817ac1aa69e81d8c07bfa90c0e/massive_waves.jpg?fm=jpg&fl=progressive&w=1920&q=75" alt="Surfer" />
       </a>
 
-      <a href="#">
+      <a href=detail-biking.php>
         <img src="https://cdn.whistler.com/s3/images/og/whistler-recreational-biking.jpg" alt="Scaling mountains in Manurai" />
       </a>
 
-      <a href="#">
+      <a href=detail-climbing.php>
         <img src="https://assets.canarymedia.com/content/uploads/Alex-honnold-lead-resized.jpg" alt="Cycling the Irma coastline" />
       </a>
     </div>
