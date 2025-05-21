@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2025 at 04:28 PM
+-- Generation Time: May 21, 2025 at 04:15 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `trip_plans` (
+  `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `city` varchar(100) DEFAULT NULL,
   `region` varchar(100) DEFAULT NULL,
@@ -39,8 +40,8 @@ CREATE TABLE `trip_plans` (
 -- Dumping data for table `trip_plans`
 --
 
-INSERT INTO `trip_plans` (`username`, `city`, `region`, `activities`, `info`) VALUES
-('Sykielnub', 'Mandaluyong', 'Philippines', 'Hiking, Mountain Biking', 'Transportation');
+INSERT INTO `trip_plans` (`id`, `username`, `city`, `region`, `activities`, `info`) VALUES
+(1, 'Sykielnub', 'Mandaluyong', 'Philippines', 'Hiking', 'Transportation');
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `failed_attempts`, `
 -- Indexes for table `trip_plans`
 --
 ALTER TABLE `trip_plans`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -87,6 +88,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `trip_plans`
+--
+ALTER TABLE `trip_plans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
