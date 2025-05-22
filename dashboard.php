@@ -210,7 +210,14 @@ if (!isset($_SESSION['username'])) {
 
 <div class="layout">
   <aside class="sidebar" role="navigation" aria-label="Main Navigation">
-    <h2>COMPASS</h2>
+<h2>
+  <img src="./logo/logo-comp.png" alt="Compass Logo" style="height: 60px; vertical-align: middle; margin-right: 10px;">
+  COMPASS
+</h2>
+
+
+
+
     <nav>
       <a href="dashboard.php" class="active">Home</a>
       <a href="trip-planner.php">Trip Planner</a>
